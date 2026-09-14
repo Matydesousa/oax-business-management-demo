@@ -1,5 +1,7 @@
 # OAX — Demo de gestión para PyMEs
 
+[![Site CI](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml/badge.svg)](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml)
+
 Sitio institucional y demostración interactiva de un sistema de gestión pensado para comercios y pequeñas empresas.
 
 El proyecto muestra cómo una solución a medida puede centralizar stock, movimientos, producción, sucursales y reportes en una interfaz simple. Toda la información de la demo es ficticia y se ejecuta localmente en el navegador.
@@ -37,11 +39,23 @@ Después visitá `http://localhost:8080`.
 
 > El formulario se procesa únicamente cuando el sitio está desplegado en Netlify. La demo no envía información a servicios externos.
 
+## Verificación
+
+Las pruebas utilizan únicamente herramientas incluidas en Node.js y comprueban la sintaxis JavaScript, la estructura básica de las páginas y la existencia de sus recursos locales.
+
+```powershell
+node --check script.js
+node --check demo.js
+node --test tests/site.test.mjs
+```
+
 ## Estructura
 
 ```text
 OAX/
+├── .github/workflows/ # Integración continua
 ├── assets/          # Logotipos e imágenes
+├── tests/           # Verificaciones automáticas del sitio
 ├── index.html       # Sitio institucional
 ├── styles.css       # Estilos de la landing
 ├── script.js        # Interacciones de la landing
@@ -49,7 +63,8 @@ OAX/
 ├── demo.css         # Estilos de la demostración
 ├── demo.js          # Estado y comportamiento de la demo
 ├── gracias.html     # Confirmación del formulario
-└── netlify.toml     # Configuración de despliegue
+├── netlify.toml     # Configuración de despliegue
+└── LICENSE          # Licencia MIT del código
 ```
 
 ## Alcance de la demo
@@ -58,6 +73,10 @@ La aplicación representa un producto frontend demostrativo. No incluye autentic
 
 ## Autor
 
-Desarrollado como proyecto de portfolio por [manuelventuradesousa1035-prog](https://github.com/manuelventuradesousa1035-prog).
+Desarrollado como proyecto de portfolio por [Matias De Sousa](https://github.com/Matydesousa).
 
 La marca OAX y sus recursos gráficos forman parte de esta demostración de portfolio.
+
+## Licencia
+
+El código de este proyecto se distribuye bajo la licencia MIT. La identidad visual y la marca OAX se incluyen únicamente como parte de esta demostración de portfolio.
