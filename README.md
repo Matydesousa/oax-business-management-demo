@@ -1,82 +1,146 @@
-# OAX — Demo de gestión para PyMEs
+<div align="center">
 
-[![Site CI](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml/badge.svg)](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml)
+<img src="assets/logo-oax-horizontal.png" alt="OAX Logo" width="380" />
 
-Sitio institucional y demostración interactiva de un sistema de gestión pensado para comercios y pequeñas empresas.
+### Sistema de Gestión Comercial y Landing Institucional para PyMEs
 
-El proyecto muestra cómo una solución a medida puede centralizar stock, movimientos, producción, sucursales y reportes en una interfaz simple. Toda la información de la demo es ficticia y se ejecuta localmente en el navegador.
+[![Site CI](https://img.shields.io/github/actions/workflow/status/Matydesousa/oax-business-management-demo/site.yml?branch=main&label=CI%20Build&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml)
+[![HTML5](https://img.shields.io/badge/HTML5-Sem%C3%A1ntico-E34F26?style=flat-square&logo=html5&logoColor=white)](index.html)
+[![CSS3](https://img.shields.io/badge/CSS3-Responsive%20%2F%20Variables-1572B6?style=flat-square&logo=css3&logoColor=white)](styles.css)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B%20Vanilla-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](demo.js)
+[![Netlify](https://img.shields.io/badge/Deploy-Netlify%20Ready-00C7B7?style=flat-square&logo=netlify&logoColor=white)](netlify.toml)
+[![License: MIT](https://img.shields.io/badge/Licencia-MIT-green?style=flat-square)](LICENSE)
 
-## Funcionalidades
+---
 
-- Landing responsive con presentación de servicios, proceso de trabajo y planes orientativos.
-- Demo navegable con panel general e indicadores de actividad.
-- Gestión simulada de productos y movimientos de inventario.
-- Filtros, búsquedas, paginación y alertas de stock mínimo.
-- Simulación de producción y transferencias entre sucursales.
-- Reportes por período y exportación a CSV.
-- Tema claro/oscuro, recorrido guiado y restablecimiento de datos.
-- Formulario de contacto preparado para Netlify Forms.
-- Navegación por teclado y atributos de accesibilidad en los controles principales.
+Sitio institucional y demostración interactiva de un software de gestión integral pensado para pequeños comercios y empresas en crecimiento.
 
-## Tecnologías
+</div>
 
-- HTML5 semántico
-- CSS3 responsive
-- JavaScript nativo
-- Netlify Forms y configuración mediante `netlify.toml`
+## 📌 Descripción
 
-No requiere frameworks, paquetes ni proceso de compilación.
+El proyecto expone cómo una solución a medida puede centralizar operaciones críticas en una única interfaz moderna y accesible: control de inventario, movimientos de stock, transferencias entre sucursales, simulación de producción y métricas clave en tiempo real. 
 
-## Ejecutar localmente
+Toda la lógica de la demo se ejecuta íntegramente en el cliente (navegador) sin requerir dependencias externas ni compiladores.
 
-Podés abrir `index.html` directamente en el navegador. Para reproducir un entorno servido por HTTP:
+---
+
+## 🚀 Arquitectura y Flujo
+
+```mermaid
+flowchart TD
+    subgraph Landing["🌐 Sitio Institucional (index.html)"]
+        Hero["Hero & Propuesta de Valor"]
+        Servicios["Módulos & Capacidades"]
+        Planes["Planes y Precios Orientativos"]
+        Formulario["Formulario de Contacto (Netlify Forms)"]
+    end
+
+    subgraph DemoApp["💻 Panel de Gestión (demo.html)"]
+        Dashboard["📊 Dashboard / KPIs en Vivo"]
+        Inventario["📦 Inventario & Alertas de Stock"]
+        Movimientos["🔄 Registro de Entradas / Salidas"]
+        Produccion["⚙️ Producción & Sucursales"]
+        Reportes["📈 Reportes & Exportación CSV"]
+    end
+
+    subgraph Storage["💾 Almacenamiento Local"]
+        LS[("LocalStorage (Preferencia de Tema)")]
+        Mem[("Estado en Memoria (Sesión Interactiva)")]
+    end
+
+    Landing -->|Acceso a Demo| DemoApp
+    DemoApp --> LS
+    DemoApp --> Mem
+```
+
+---
+
+## ✨ Características Principales
+
+| Módulo / Funcionalidad | Descripción |
+| :--- | :--- |
+| **🌐 Landing Institucional** | Presentación comercial responsive, detalles de servicios, esquema de precios y confirmación de contacto. |
+| **📊 Dashboard Operativo** | Indicadores en vivo de stock total, valor monetario estimado, alertas de quiebre y productos críticos. |
+| **📦 Gestión de Inventario** | Catálogo con filtros por categoría, búsqueda en tiempo real, ordenamiento, paginación y avisos de stock mínimo. |
+| **🔄 Movimientos y Sucursales** | Simulación de ingresos/egresos y transferencias entre sucursales con ajuste automático de existencias. |
+| **⚙️ Módulo de Producción** | Generación de órdenes de armado con validación de insumos y actualización de productos terminados. |
+| **📈 Reportes y Exportación** | Filtros de transacciones por rango de fechas y descarga directa de resúmenes en formato **CSV**. |
+| **🌗 Accesibilidad y Tema** | Soporte de Modo Claro / Oscuro con persistencia en `localStorage`, navegación completa por teclado y roles ARIA. |
+
+---
+
+## 🛠️ Tecnologías
+
+- **HTML5**: Estructura semántica, formularios con validación nativa y accesibilidad (a11y).
+- **CSS3 Moderno**: Variables CSS para temas dinámicos, Flexbox, Grid y diseño totalmente adaptable (*Mobile-First*).
+- **JavaScript (Vanilla ES6+)**: Manipulación del DOM, gestión reactiva de estado en memoria y exportación de archivos en cliente.
+- **Netlify**: Soporte de formularios estáticos y cabeceras de seguridad mediante `netlify.toml`.
+
+> **Sin dependencias pesadas**: No requiere Node.js para ejecutarse, ni librerías externas ni pasos de compilación.
+
+---
+
+## 💻 Ejecución Local
+
+Podés abrir `index.html` directamente con doble clic en tu navegador. Para simular un entorno servido vía HTTP:
 
 ```powershell
+# Iniciar un servidor local ligero
 py -m http.server 8080
 ```
 
-Después visitá `http://localhost:8080`.
+Luego abrí [http://localhost:8080](http://localhost:8080) en tu navegador.
 
-> El formulario se procesa únicamente cuando el sitio está desplegado en Netlify. La demo no envía información a servicios externos.
+---
 
-## Verificación
+## 🧪 Pruebas y Validación
 
-Las pruebas utilizan únicamente herramientas incluidas en Node.js y comprueban la sintaxis JavaScript, la estructura básica de las páginas y la existencia de sus recursos locales.
+El proyecto incluye verificaciones automatizadas nativas con el test runner de Node.js que aseguran la integridad del código y los enlaces internos:
 
 ```powershell
+# Validar sintaxis JavaScript
 node --check script.js
 node --check demo.js
+
+# Ejecutar suite de pruebas de estructura y recursos
 node --test tests/site.test.mjs
 ```
 
-## Estructura
+---
+
+## 📂 Estructura del Repositorio
 
 ```text
 OAX/
-├── .github/workflows/ # Integración continua
-├── assets/          # Logotipos e imágenes
-├── tests/           # Verificaciones automáticas del sitio
-├── index.html       # Sitio institucional
-├── styles.css       # Estilos de la landing
-├── script.js        # Interacciones de la landing
-├── demo.html        # Interfaz de la demostración
-├── demo.css         # Estilos de la demostración
-├── demo.js          # Estado y comportamiento de la demo
-├── gracias.html     # Confirmación del formulario
-├── netlify.toml     # Configuración de despliegue
-└── LICENSE          # Licencia MIT del código
+├── .github/
+│   └── workflows/
+│       └── site.yml         # Integración continua (GitHub Actions)
+├── assets/                  # Identidad visual, logotipos e iconos
+├── tests/
+│   └── site.test.mjs        # Suite de pruebas automatizadas
+├── index.html               # Landing page institucional
+├── styles.css               # Estilos de la landing page
+├── script.js                # Lógica e interactividad de la landing
+├── demo.html                # Interfaz del panel de gestión
+├── demo.css                 # Estilos y temas (dark/light) de la demo
+├── demo.js                  # Manejo de datos y operaciones de la demo
+├── gracias.html             # Página de agradecimiento post-contacto
+├── netlify.toml             # Reglas de despliegue y cabeceras HTTP
+├── LICENSE                  # Licencia de código abierto MIT
+└── README.md                # Documentación del proyecto
 ```
 
-## Alcance de la demo
+---
 
-La aplicación representa un producto frontend demostrativo. No incluye autenticación, persistencia remota, API ni base de datos. El tema se guarda en `localStorage`; los datos operativos permanecen solamente durante la sesión y pueden restablecerse desde la interfaz.
+## 👤 Autor
 
-## Autor
+Desarrollado como proyecto de portfolio por **[Matias De Sousa](https://github.com/Matydesousa)**.
 
-Desarrollado como proyecto de portfolio por [Matias De Sousa](https://github.com/Matydesousa).
+La marca OAX y sus recursos visuales forman parte de esta demostración interactiva de portfolio.
 
-La marca OAX y sus recursos gráficos forman parte de esta demostración de portfolio.
+---
 
-## Licencia
+## 📄 Licencia
 
-El código de este proyecto se distribuye bajo la licencia MIT. La identidad visual y la marca OAX se incluyen únicamente como parte de esta demostración de portfolio.
+Este proyecto se distribuye bajo la licencia **[MIT](LICENSE)**.
