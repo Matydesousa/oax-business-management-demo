@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo interactiva de un sistema de gestión desarrollado por OAX." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#07111f" />
+    <title>Demo de gestión | OAX</title>
+    <link rel="icon" href="assets/logo-oax-cuadrado.png" type="image/png" />
+    <link rel="stylesheet" href="demo.css" />
+    <script src="demo.js" defer></script>
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z" /></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="m4 7 8-4 8 4-8 4-8-4Z" /><path d="m4 7 8 4 8-4v10l-8 4-8-4Z" /><path d="M12 11v10" /></symbol>
+      <symbol id="i-arrows" viewBox="0 0 24 24"><path d="M4 7h14m-4-4 4 4-4 4M20 17H6m4 4-4-4 4-4" /></symbol>
+      <symbol id="i-factory" viewBox="0 0 24 24"><path d="M4 21v-9l6 3v-3l6 3V6h4v15Z" /><path d="M7 21v-3h3v3m4 0v-3h3v3" /></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9h6v12m2 0V3h6v18" /><path d="M7 12h2m-2 4h2m8-10h-2m2 4h-2m2 4h-2" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z" /><path d="M10 21h4" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" /></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4.2 2.6 18a2 2 0 0 0 1.8 3h15.2a2 2 0 0 0 1.8-3L13.7 4.2a2 2 0 0 0-3.4 0Z" /><path d="M12 9v4m0 4h.01" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 20h16" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M9.7 9a2.5 2.5 0 1 1 3.4 2.3c-.8.4-1.1.9-1.1 1.7m0 4h.01" /></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10m-7 6h4" /></symbol>
+      <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></symbol>
+    </svg>
+
+    <div class="mobile-overlay" data-mobile-overlay></div>
+
+    <aside class="sidebar" id="demo-sidebar" data-sidebar>
+      <div class="sidebar-top">
+        <a class="demo-brand" href="index.html" aria-label="OAX, volver al sitio institucional">
+          <span class="demo-logo-crop"><img src="assets/logo-oax-horizontal.png" alt="" /></span>
+          <span class="demo-badge">DEMO</span>
+        </a>
+        <button class="icon-button sidebar-close" type="button" aria-label="Cerrar menú" data-close-sidebar><svg><use href="#i-close" /></svg></button>
+      </div>
+
+      <button class="company-switch" type="button">
+        <span class="company-avatar">HN</span>
+        <span><strong>Heladería Norte</strong><small>Casa central</small></span>
+        <svg><use href="#i-down" /></svg>
+      </button>
+
+      <nav class="demo-nav" aria-label="Secciones del sistema">
+        <p>General</p>
+        <button class="active" type="button" data-view="dashboard"><svg><use href="#i-home" /></svg><span>Inicio</span></button>
+        <p>Operación</p>
+        <button type="button" data-view="stock"><svg><use href="#i-box" /></svg><span>Stock</span><i data-alert-count>3</i></button>
+        <button type="button" data-view="movements"><svg><use href="#i-arrows" /></svg><span>Movimientos</span></button>
+        <button type="button" data-view="production"><svg><use href="#i-factory" /></svg><span>Producción</span></button>
+        <button type="button" data-view="branches"><svg><use href="#i-building" /></svg><span>Sucursales</span></button>
+        <p>Análisis</p>
+        <button type="button" data-view="reports"><svg><use href="#i-chart" /></svg><span>Reportes</span></button>
+      </nav>
+
+      <a class="back-site" href="index.html"><span>←</span> Volver al sitio de OAX</a>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-header">
+        <button class="icon-button mobile-menu" type="button" aria-label="Abrir menú" aria-controls="demo-sidebar" aria-expanded="false" data-open-sidebar><svg><use href="#i-menu" /></svg></button>
+        <div class="global-search-wrap">
+          <label class="global-search">
+            <svg><use href="#i-search" /></svg>
+            <input type="search" aria-label="Buscar en todo el sistema" aria-controls="global-results" aria-expanded="false" autocomplete="off" placeholder="Buscar productos, movimientos..." data-global-search />
+            <kbd>Ctrl K</kbd>
+          </label>
+          <div class="global-results" id="global-results" role="listbox" hidden data-global-results></div>
+        </div>
+        <div class="header-actions">
+          <span class="today" data-today></span>
+          <button class="icon-button" type="button" aria-label="Usar tema oscuro" aria-pressed="false" data-theme-toggle><svg><use href="#i-sun" /></svg></button>
+          <button class="icon-button notification-button" type="button" aria-label="Ver notificaciones" aria-controls="notification-drawer" aria-expanded="false" data-notifications-button><svg><use href="#i-bell" /></svg><i></i></button>
+          <button class="profile-button" type="button"><span>OD</span><span><strong>Usuario OAX Demo</strong><small>Perfil de demostración</small></span><svg><use href="#i-down" /></svg></button>
+        </div>
+      </header>
+
+      <div class="demo-notice">
+        <span><svg><use href="#i-help" /></svg></span>
+        <p><strong>Estás explorando una demo.</strong> Toda la información es ficticia y podés probar las funciones con libertad.</p>
+        <div class="demo-notice-actions">
+          <button class="simulation-button" type="button" data-start-tour><svg><use href="#i-help" /></svg> Simular demostración</button>
+          <button class="notice-reset" type="button" data-reset-demo>Restablecer</button>
+          <a href="index.html#contacto">Quiero algo así</a>
+        </div>
+      </div>
+
+      <div class="content-shell">
+        <section class="app-panel active" aria-hidden="false" data-panel="dashboard">
+          <div class="page-title-row">
+            <div><p class="page-kicker">Panel general</p><h1>Buen día, Usuario OAX Demo <span aria-hidden="true">👋</span></h1><p>Este es el estado de tu negocio hoy.</p></div>
+            <div class="title-actions">
+              <button class="secondary-button" type="button" data-view-jump="reports"><svg><use href="#i-chart" /></svg> Ver reportes</button>
+              <button class="primary-button" type="button" data-open-modal="movement"><svg><use href="#i-plus" /></svg> Registrar movimiento</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" data-tour="kpis">
+            <article class="kpi-card">
+              <div class="kpi-top"><span class="kpi-icon blue"><svg><use href="#i-box" /></svg></span><span class="trend neutral">Actual</span></div>
+              <p>Unidades en stock</p><strong data-total-stock>2.480</strong><small data-category-count>En 3 categorías</small>
+            </article>
+            <article class="kpi-card">
+              <div class="kpi-top"><span class="kpi-icon green"><svg><use href="#i-arrows" /></svg></span><span class="trend positive" data-movement-trend>Mes actual</span></div>
+              <p>Movimientos del mes</p><strong data-month-movements>164</strong><small data-today-movements>0 registrados hoy</small>
+            </article>
+            <article class="kpi-card">
+              <div class="kpi-top"><span class="kpi-icon violet"><svg><use href="#i-factory" /></svg></span><span class="trend neutral">En curso</span></div>
+              <p>Producciones activas</p><strong data-active-productions>3</strong><small data-production-note>Seguimiento en tiempo real</small>
+            </article>
+            <article class="kpi-card alert-card">
+              <div class="kpi-top"><span class="kpi-icon orange"><svg><use href="#i-alert" /></svg></span><span class="trend warning">Revisar</span></div>
+              <p>Alertas de stock</p><strong data-low-count>3</strong><small>Productos en o bajo el mínimo</small>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="widget chart-widget" data-tour="chart">
+              <div class="widget-head"><div><h2>Movimientos de stock</h2><p data-dashboard-chart-subtitle>Entradas y salidas de los últimos 7 días</p></div><select aria-label="Período del gráfico" data-dashboard-period><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="90">Últimos 3 meses</option></select></div>
+              <div class="chart-legend"><span><i class="entry"></i> Entradas</span><span><i class="exit"></i> Salidas</span></div>
+              <div class="main-chart">
+                <div class="chart-scale" data-chart-scale><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div>
+                <svg viewBox="0 0 700 230" preserveAspectRatio="none" role="img" aria-label="Gráfico de entradas y salidas de stock">
+                  <defs><linearGradient id="fillEntry" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#159cf7" stop-opacity=".24" /><stop offset="1" stop-color="#159cf7" stop-opacity="0" /></linearGradient></defs>
+                  <g class="grid-lines"><path d="M0 15H700M0 65H700M0 115H700M0 165H700M0 215H700" /></g>
+                  <path class="area" data-chart-area d="" />
+                  <path class="line entry-line" data-chart-entry d="" />
+                  <path class="line exit-line" data-chart-exit d="" />
+                </svg>
+                <div class="chart-labels" data-chart-labels></div>
+              </div>
+            </article>
+
+            <article class="widget quick-widget" data-tour="quick">
+              <div class="widget-head"><div><h2>Acciones rápidas</h2><p>Las tareas más frecuentes</p></div></div>
+              <div class="quick-grid">
+                <button type="button" data-open-modal="movement"><span class="quick-icon blue"><svg><use href="#i-arrows" /></svg></span><span><strong>Nuevo movimiento</strong><small>Entrada o salida</small></span><svg class="quick-arrow"><use href="#i-chevron" /></svg></button>
+                <button type="button" data-open-modal="product"><span class="quick-icon green"><svg><use href="#i-box" /></svg></span><span><strong>Agregar producto</strong><small>Alta en el catálogo</small></span><svg class="quick-arrow"><use href="#i-chevron" /></svg></button>
+                <button type="button" data-produce><span class="quick-icon violet"><svg><use href="#i-factory" /></svg></span><span><strong>Registrar producción</strong><small>Elaborar un lote</small></span><svg class="quick-arrow"><use href="#i-chevron" /></svg></button>
+                <button type="button" data-view-jump="reports"><span class="quick-icon orange"><svg><use href="#i-chart" /></svg></span><span><strong>Ir a reportes</strong><small>Analizar y exportar</small></span><svg class="quick-arrow"><use href="#i-chevron" /></svg></button>
+              </div>
+            </article>
+
+            <article class="widget alert-widget">
+              <div class="widget-head"><div><h2>Stock bajo</h2><p>Productos que requieren atención</p></div><button type="button" data-view-jump="stock">Ver todos</button></div>
+              <div class="alert-list" data-low-stock-list></div>
+            </article>
+
+            <article class="widget activity-widget">
+              <div class="widget-head"><div><h2>Actividad reciente</h2><p>Últimos movimientos registrados</p></div><button type="button" data-view-jump="movements">Ver historial</button></div>
+              <div class="activity-list" data-recent-list></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-hidden="true" hidden inert data-panel="stock">
+          <div class="page-title-row"><div><p class="page-kicker">Inventario</p><h1>Stock de productos</h1><p>Consultá existencias, mínimos y ubicaciones.</p></div><div class="title-actions"><button class="primary-button" type="button" data-open-modal="product"><svg><use href="#i-plus" /></svg> Agregar producto</button></div></div>
+          <div class="summary-strip"><div><span>Productos activos</span><strong data-product-count>8</strong></div><div><span>Valor estimado</span><strong data-stock-value>$ 0</strong></div><div><span>En o bajo el mínimo</span><strong class="orange-text" data-stock-low-count>3</strong></div><div><span>Sin actividad (30 días)</span><strong data-inactive-products>0</strong></div></div>
+          <article class="widget table-widget" data-tour="stock-table">
+            <div class="table-toolbar"><label><svg><use href="#i-search" /></svg><input type="search" aria-label="Buscar productos por nombre o código" placeholder="Buscar por nombre o código" data-product-search /></label><div><select data-category-filter aria-label="Filtrar por categoría"><option value="all">Todas las categorías</option><option>Materia prima</option><option>Producto terminado</option><option>Insumos</option></select><button class="filter-button" type="button" aria-expanded="false" data-toggle-stock-filters><svg><use href="#i-filter" /></svg> Más filtros</button></div></div>
+            <div class="advanced-filters" hidden data-stock-filters>
+              <label>Sucursal<select data-stock-branch><option value="all">Todas</option></select></label>
+              <label>Estado<select data-stock-status><option value="all">Todos</option><option value="low">En o bajo el mínimo</option><option value="ok">Stock saludable</option></select></label>
+              <label>Ordenar<select data-stock-sort><option value="name">Nombre A–Z</option><option value="stock-asc">Menor stock</option><option value="stock-desc">Mayor stock</option><option value="value-desc">Mayor valor</option></select></label>
+              <button class="clear-filters" type="button" data-clear-stock-filters>Limpiar filtros</button>
+            </div>
+            <div class="table-scroll"><table><caption class="sr-only">Inventario de productos de la empresa ficticia</caption><thead><tr><th scope="col">Producto</th><th scope="col">Categoría</th><th scope="col">Stock actual</th><th scope="col">Mínimo</th><th scope="col">Estado</th><th scope="col">Sucursal</th><th scope="col"><span class="sr-only">Acciones</span></th></tr></thead><tbody data-products-table></tbody></table></div>
+            <div class="table-footer"><span data-table-summary>Mostrando 8 productos</span><div data-pagination></div></div>
+          </article>
+        </section>
+
+        <section class="app-panel" aria-hidden="true" hidden inert data-panel="movements">
+          <div class="page-title-row"><div><p class="page-kicker">Trazabilidad</p><h1>Movimientos</h1><p>Cada entrada y salida queda registrada con su motivo.</p></div><div class="title-actions"><button class="primary-button" type="button" data-open-modal="movement"><svg><use href="#i-plus" /></svg> Registrar movimiento</button></div></div>
+          <div class="movement-summary"><article><span class="movement-icon in"><svg><use href="#i-down" /></svg></span><div><span>Entradas del período</span><strong data-movement-entries>0 u.</strong><small data-entry-operations>0 operaciones</small></div></article><article><span class="movement-icon out"><svg><use href="#i-up" /></svg></span><div><span>Salidas del período</span><strong data-movement-exits>0 u.</strong><small data-exit-operations>0 operaciones</small></div></article><article><span class="movement-icon adjust"><svg><use href="#i-arrows" /></svg></span><div><span>Balance del período</span><strong data-movement-balance>0 u.</strong><small data-movement-period-label>Últimos 30 días</small></div></article></div>
+          <article class="widget table-widget"><div class="table-toolbar"><label><svg><use href="#i-search" /></svg><input type="search" aria-label="Buscar en el historial de movimientos" placeholder="Producto, motivo, sucursal..." data-movement-search /></label><div><select aria-label="Filtrar tipo" data-movement-type><option value="all">Todos los tipos</option><option value="Entrada">Entradas</option><option value="Salida">Salidas</option></select><select aria-label="Filtrar período" data-movement-period><option value="7">7 días</option><option value="30" selected>30 días</option><option value="90">3 meses</option><option value="all">Todo</option></select><button class="filter-button" type="button" data-export-report="movements"><svg><use href="#i-download" /></svg> Exportar</button></div></div><div class="table-scroll"><table><caption class="sr-only">Historial de movimientos de inventario</caption><thead><tr><th scope="col">Fecha</th><th scope="col">Producto</th><th scope="col">Tipo</th><th scope="col">Cantidad</th><th scope="col">Motivo</th><th scope="col">Sucursal</th><th scope="col">Usuario</th></tr></thead><tbody data-movements-table></tbody></table></div></article>
+        </section>
+
+        <section class="app-panel" aria-hidden="true" hidden inert data-panel="production">
+          <div class="page-title-row"><div><p class="page-kicker">Elaboración</p><h1>Producción</h1><p>Convertí materias primas en productos terminados.</p></div><div class="title-actions"><button class="primary-button" type="button" data-produce><svg><use href="#i-plus" /></svg> Nueva producción</button></div></div>
+          <div class="production-banner"><div><span><svg><use href="#i-factory" /></svg></span><div><h2>Producción conectada al stock</h2><p>Elegí una receta y el sistema verificará insumos, descontará consumos y sumará el producto terminado.</p></div></div><button type="button" data-produce>Simular lote <svg><use href="#i-chevron" /></svg></button></div>
+          <div class="production-grid">
+            <article class="widget"><div class="widget-head"><div><h2>Lotes recientes</h2><p>Producciones en curso y completadas</p></div><span class="live-label"><i></i> En vivo</span></div><div class="batch-list" data-batch-list></div></article>
+            <article class="widget"><div class="widget-head"><div><h2>Recetas frecuentes</h2><p>Fórmulas listas para producir</p></div><button type="button" data-show-recipes>Ver detalle</button></div><div class="recipe-list"><button type="button" data-produce data-recipe="chocolate"><span class="recipe-emoji">🍫</span><span><strong>Chocolate intenso</strong><small>3 ingredientes · rinde 20 u.</small></span><svg><use href="#i-chevron" /></svg></button><button type="button" data-produce data-recipe="frutilla"><span class="recipe-emoji">🍓</span><span><strong>Frutilla a la crema</strong><small>3 ingredientes · rinde 20 u.</small></span><svg><use href="#i-chevron" /></svg></button></div></article>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-hidden="true" hidden inert data-panel="branches">
+          <div class="page-title-row"><div><p class="page-kicker">Ubicaciones</p><h1>Sucursales</h1><p>Control individual y consolidado de cada ubicación.</p></div><div class="title-actions"><button class="primary-button" type="button" data-demo-action="branch"><svg><use href="#i-plus" /></svg> Nueva sucursal</button></div></div>
+          <div class="branch-grid" data-branch-grid></div>
+          <article class="widget transfer-widget"><div><span><svg><use href="#i-arrows" /></svg></span><div><h2>Transferencias entre sucursales</h2><p>Registrá envíos y recepciones manteniendo el stock de cada ubicación actualizado.</p></div></div><button class="secondary-button" type="button" data-demo-action="transfer">Nueva transferencia</button></article>
+        </section>
+
+        <section class="app-panel" aria-hidden="true" hidden inert data-panel="reports">
+          <div class="page-title-row"><div><p class="page-kicker">Información para decidir</p><h1>Reportes</h1><p>Indicadores claros y datos listos para compartir.</p></div><div class="title-actions"><button class="primary-button" type="button" data-export-report="summary"><svg><use href="#i-download" /></svg> Exportar resumen</button></div></div>
+          <div class="report-filters"><div><button class="active" type="button" aria-pressed="true" data-report-period="7">7 días</button><button type="button" aria-pressed="false" data-report-period="30">30 días</button><button type="button" aria-pressed="false" data-report-period="90">3 meses</button><button type="button" aria-pressed="false" data-report-period="custom">Personalizado</button></div><select aria-label="Sucursal del reporte" data-report-branch><option value="all">Todas las sucursales</option></select></div>
+          <div class="custom-period" hidden data-custom-period><label>Desde<input type="date" data-report-from /></label><label>Hasta<input type="date" data-report-to /></label><button class="primary-button" type="button" data-apply-custom-period>Aplicar período</button></div>
+          <div class="summary-strip report-summary"><div><span>Entradas</span><strong data-report-entries>0 u.</strong></div><div><span>Salidas</span><strong data-report-exits>0 u.</strong></div><div><span>Balance</span><strong data-report-balance>0 u.</strong></div><div><span>Operaciones</span><strong data-report-operations>0</strong></div></div>
+          <div class="report-grid"><article class="widget report-chart"><div class="widget-head"><div><h2>Movimientos por categoría</h2><p data-report-subtitle>Últimos 7 días · Todas las sucursales</p></div><button class="icon-button" type="button" aria-label="Exportar resumen" data-export-report="summary"><svg><use href="#i-download" /></svg></button></div><div class="bar-chart" data-report-bars></div></article><article class="widget report-value"><div class="widget-head"><div><h2>Valor del inventario</h2><p data-inventory-snapshot>Inventario actual</p></div></div><div class="donut" data-report-donut><div><strong data-report-value>$0</strong><span>Total</span></div></div><ul data-report-distribution></ul></article></div>
+          <div class="report-cards"><button type="button" data-export-report="stock"><span class="report-file blue"><svg><use href="#i-box" /></svg></span><span><strong>Estado de stock</strong><small>Existencias, mínimos y valuación</small></span><svg><use href="#i-download" /></svg></button><button type="button" data-export-report="movements"><span class="report-file green"><svg><use href="#i-arrows" /></svg></span><span><strong>Historial de movimientos</strong><small>Respeta período y sucursal elegidos</small></span><svg><use href="#i-download" /></svg></button><button type="button" data-export-report="production"><span class="report-file violet"><svg><use href="#i-factory" /></svg></span><span><strong>Resumen de producción</strong><small>Lotes, consumos y responsables</small></span><svg><use href="#i-download" /></svg></button></div>
+        </section>
+      </div>
+    </main>
+
+    <aside class="notification-drawer" id="notification-drawer" aria-hidden="true" hidden inert data-notification-drawer>
+      <div class="drawer-head"><div><h2>Notificaciones</h2><span data-notification-count>3 nuevas</span></div><button class="icon-button" type="button" aria-label="Cerrar notificaciones" data-close-notifications><svg><use href="#i-close" /></svg></button></div>
+      <div class="drawer-list" data-notification-list></div>
+    </aside>
+
+    <div class="modal-backdrop" data-modal-backdrop></div>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="movement-title" aria-hidden="true" hidden inert data-modal="movement">
+      <div class="modal-head"><div><p>Stock</p><h2 id="movement-title">Registrar movimiento</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <form data-movement-form>
+        <div class="type-selector"><label><input type="radio" name="tipo" value="Entrada" checked /><span><svg><use href="#i-down" /></svg><strong>Entrada</strong><small>Sumar al stock</small></span></label><label><input type="radio" name="tipo" value="Salida" /><span><svg><use href="#i-up" /></svg><strong>Salida</strong><small>Descontar del stock</small></span></label></div>
+        <div class="form-row"><label>Producto<select name="producto" data-product-select required></select></label><label>Sucursal<select name="sucursal" data-movement-branch required></select></label></div>
+        <div class="form-row"><label>Cantidad<input name="cantidad" type="number" min="1" value="10" required /></label><label>Motivo<select name="motivo"><option>Compra a proveedor</option><option>Venta</option><option>Producción</option><option>Ajuste de inventario</option><option>Transferencia</option></select></label></div>
+        <label>Observación <span>(opcional)</span><textarea name="observacion" rows="3" placeholder="Agregá un detalle..."></textarea></label>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cancelar</button><button class="primary-button" type="submit">Guardar movimiento</button></div>
+      </form>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="product-title" aria-hidden="true" hidden inert data-modal="product">
+      <div class="modal-head"><div><p>Catálogo</p><h2 id="product-title">Agregar producto</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <form data-product-form>
+        <label>Nombre del producto<input name="nombre" type="text" placeholder="Ej: Cucuruchos artesanales" required /></label>
+        <div class="form-row"><label>Categoría<select name="categoria"><option>Materia prima</option><option>Producto terminado</option><option>Insumos</option></select></label><label>Código<input name="codigo" type="text" placeholder="Se genera automáticamente" /></label></div>
+        <div class="form-row"><label>Stock inicial<input name="stock" type="number" min="0" value="0" required /></label><label>Stock mínimo<input name="minimo" type="number" min="0" value="10" required /></label></div>
+        <div class="form-row"><label>Costo unitario (ARS)<input name="costo" type="number" min="0" step="0.01" value="1000" required /></label><label>Sucursal<select name="sucursal" data-branch-select required></select></label></div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cancelar</button><button class="primary-button" type="submit">Agregar producto</button></div>
+      </form>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="production-title" aria-hidden="true" hidden inert data-modal="production">
+      <div class="modal-head"><div><p>Producción</p><h2 id="production-title">Simular un lote</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <form data-production-form>
+        <div class="form-row"><label>Receta<select name="receta" data-recipe-select required></select></label><label>Sucursal<select name="sucursal" data-production-branch required></select></label></div>
+        <label>Cantidad a producir<input name="cantidad" type="number" min="10" step="10" value="20" required /></label>
+        <div class="operation-preview" aria-live="polite" data-production-preview></div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cancelar</button><button class="primary-button" type="submit">Confirmar producción</button></div>
+      </form>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="transfer-title" aria-hidden="true" hidden inert data-modal="transfer">
+      <div class="modal-head"><div><p>Sucursales</p><h2 id="transfer-title">Nueva transferencia</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <form data-transfer-form>
+        <div class="form-row"><label>Desde<select name="origen" data-transfer-origin required></select></label><label>Hacia<select name="destino" data-transfer-destination required></select></label></div>
+        <label>Producto<select name="producto" data-transfer-product required></select></label>
+        <label>Cantidad<input name="cantidad" type="number" min="1" value="10" required /></label>
+        <div class="operation-preview" aria-live="polite" data-transfer-preview></div>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cancelar</button><button class="primary-button" type="submit">Transferir stock</button></div>
+      </form>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="branch-title" aria-hidden="true" hidden inert data-modal="branch">
+      <div class="modal-head"><div><p>Configuración</p><h2 id="branch-title">Agregar sucursal</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <form data-branch-form>
+        <label>Nombre<input name="nombre" type="text" placeholder="Ej: Caballito" required /></label>
+        <label>Dirección<input name="direccion" type="text" placeholder="Ej: Av. Rivadavia 5200, CABA" required /></label>
+        <label>Tipo<select name="tipo"><option>Activa</option><option>Depósito</option><option>Punto de venta</option></select></label>
+        <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cancelar</button><button class="primary-button" type="submit">Crear sucursal</button></div>
+      </form>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden="true" hidden inert data-modal="product-detail">
+      <div class="modal-head"><div><p>Inventario</p><h2 id="detail-title">Detalle del producto</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <div class="product-detail" data-product-detail></div>
+      <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cerrar</button><button class="primary-button" type="button" data-detail-movement>Registrar movimiento</button></div>
+    </section>
+
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" aria-hidden="true" hidden inert data-modal="profile">
+      <div class="modal-head"><div><p>Cuenta y espacio</p><h2 id="profile-title">Heladería Norte</h2></div><button class="icon-button" type="button" aria-label="Cerrar" data-close-modal><svg><use href="#i-close" /></svg></button></div>
+      <div class="profile-summary"><span class="company-avatar">OD</span><div><strong>Usuario OAX Demo · Administrador</strong><p>Acceso completo a la empresa ficticia y todas sus sucursales.</p></div></div>
+      <div class="modal-actions"><button class="secondary-button" type="button" data-close-modal>Cerrar</button><button class="primary-button" type="button" data-reset-demo>Restablecer datos demo</button></div>
+    </section>
+
+    <div class="tour-popover" role="dialog" aria-live="polite" aria-labelledby="tour-title" aria-hidden="true" hidden inert data-tour-popover>
+      <span class="tour-step" data-tour-step>Demostración · Paso 1 de 24</span>
+      <div class="tour-progress" aria-hidden="true"><i data-tour-progress></i></div>
+      <h2 id="tour-title" data-tour-title>Todo en un vistazo</h2><p data-tour-text>Los indicadores muestran el estado del negocio en tiempo real.</p><div><button type="button" data-tour-close>Salir</button><span class="tour-nav"><button type="button" data-tour-prev>Anterior</button><button type="button" data-tour-next>Siguiente <span>→</span></button></span></div>
+    </div>
+    <div class="toast" role="status" aria-live="polite" data-toast><span><svg><use href="#i-check" /></svg></span><div><strong data-toast-title>Listo</strong><p data-toast-message>La acción se completó correctamente.</p></div></div>
+  </body>
+</html>
