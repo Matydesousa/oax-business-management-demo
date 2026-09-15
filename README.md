@@ -4,7 +4,7 @@
 
 ### Sistema de Gestión Comercial y Landing Institucional para PyMEs
 
-[![Site CI](https://img.shields.io/github/actions/workflow/status/Matydesousa/oax-business-management-demo/site.yml?branch=main&label=CI%20Build&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml)
+[![Site CI](https://img.shields.io/github/actions/workflow/status/Matydesousa/oax-business-management-demo/site.yml?branch=main&label=Site%20CI&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/Matydesousa/oax-business-management-demo/actions/workflows/site.yml)
 [![HTML5](https://img.shields.io/badge/HTML5-Sem%C3%A1ntico-E34F26?style=flat-square&logo=html5&logoColor=white)](index.html)
 [![CSS3](https://img.shields.io/badge/CSS3-Responsive%20%2F%20Variables-1572B6?style=flat-square&logo=css3&logoColor=white)](styles.css)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B%20Vanilla-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](demo.js)
@@ -19,7 +19,7 @@ Sitio institucional y demostración interactiva de un software de gestión integ
 
 ## 📌 Descripción
 
-El proyecto expone cómo una solución a medida puede centralizar operaciones críticas en una única interfaz moderna y accesible: control de inventario, movimientos de stock, transferencias entre sucursales, simulación de producción y métricas clave en tiempo real. 
+El proyecto expone cómo una solución a medida puede centralizar operaciones críticas en una única interfaz moderna y accesible: control de inventario, movimientos de stock, transferencias entre sucursales, simulación de producción y métricas recalculadas durante la sesión.
 
 Toda la lógica de la demo se ejecuta íntegramente en el cliente (navegador) sin requerir dependencias externas ni compiladores.
 
@@ -73,8 +73,8 @@ flowchart TD
 ## 🛠️ Tecnologías
 
 - **HTML5**: Estructura semántica, formularios con validación nativa y accesibilidad (a11y).
-- **CSS3 Moderno**: Variables CSS para temas dinámicos, Flexbox, Grid y diseño totalmente adaptable (*Mobile-First*).
-- **JavaScript (Vanilla ES6+)**: Manipulación del DOM, gestión reactiva de estado en memoria y exportación de archivos en cliente.
+- **CSS3 Moderno**: Variables CSS para temas dinámicos, Flexbox, Grid y diseño responsive con puntos de corte adaptativos.
+- **JavaScript (Vanilla ES6+)**: Manipulación del DOM, gestión del estado de la sesión en memoria y exportación de archivos en el cliente.
 - **Netlify**: Soporte de formularios estáticos y cabeceras de seguridad mediante `netlify.toml`.
 
 > **Sin dependencias pesadas**: No requiere Node.js para ejecutarse, ni librerías externas ni pasos de compilación.
@@ -112,7 +112,7 @@ node --test tests/site.test.mjs
 ## 📂 Estructura del Repositorio
 
 ```text
-OAX/
+oax-business-management-demo/
 ├── .github/
 │   └── workflows/
 │       └── site.yml         # Integración continua (GitHub Actions)
@@ -143,4 +143,4 @@ La marca OAX y sus recursos visuales forman parte de esta demostración interact
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo la licencia **[MIT](LICENSE)**.
+El código de este proyecto se distribuye bajo la licencia **[MIT](LICENSE)**. La marca OAX y sus recursos visuales se incluyen únicamente como parte de esta demostración de portfolio.
